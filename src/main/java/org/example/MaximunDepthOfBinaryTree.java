@@ -1,8 +1,4 @@
 package org.example;
-
-import sun.reflect.generics.tree.Tree;
-
-import java.util.Enumeration;
 import java.util.Stack;
 
 public class MaximunDepthOfBinaryTree {
@@ -14,27 +10,35 @@ public class MaximunDepthOfBinaryTree {
             return 0;
         }
 
-        int count = 0;
         Stack<TreeNode> stack = new Stack<>();
+        Stack<Integer> count = new Stack<>();
         stack.push(root);
-        count = 1;
+        int max = 0;
 
         while(!stack.isEmpty()){
             TreeNode actual = stack.pop();
+            int actualProf = count.pop();
 
-            if(actual.left != null){
-                stack.push(actual.left);
-                count++;
+            if(actual.left != null || actual.right != null) {
+                if(actual.left != null ){
+                    stack.push(actual.left);
+                    count.push(actualProf+1);
+                }
+                if (actual.right != null) {
+                    stack.push(actual.right);
+                    count.push(actualProf+1);
+                }
             }
-            if(actual.right != null){
-                stack.push(actual.right);
-                count++;
+
+            if(actual.right == null && actual.left ==null){
+                if(max <= actualProf){
+                    max = actualProf;
+                }
             }
         }
-
-        return count;
-
+        return max;
     }
+
 
     public static class TreeNode {
         int val;
@@ -49,3 +53,4 @@ public class MaximunDepthOfBinaryTree {
     }
  }
 }
+
