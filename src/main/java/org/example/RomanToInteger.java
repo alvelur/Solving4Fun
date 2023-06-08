@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class RomanToInteger {
     public static void main(String[] args) {
-        String s = "MCMXCIV";
+        String s = "MMCDXXV";
         System.out.println(romanToInt(s));
 
     }
@@ -22,23 +22,24 @@ public class RomanToInteger {
         myMap.put('D', 500);
         myMap.put('M', 1000);
 
-        int i = 1;
-        while(i < s.length()){
-
-            if(myMap.get(s.charAt(i-1)) < myMap.get(s.charAt(i))){
-                count += myMap.get(s.charAt(i)) - myMap.get(s.charAt(i-1));
+        int i = 0;
+        while(i < s.length()) {
+            if (s.length() == 1) {
+                return myMap.get(s.charAt(i));
             }
-             else if(myMap.get(s.charAt(i-1)) >= myMap.get(s.charAt(i))) {
-                count += myMap.get(s.charAt(i - 1)) + myMap.get(s.charAt(i));
+                if(i + 1 >= s.length()){
+                    count += myMap.get(s.charAt(i));
+                    return count;
+                }else{
+                    if(myMap.get(s.charAt(i)) >= myMap.get(s.charAt(i + 1))){
+                        count += myMap.get(s.charAt(i));
+                        i = i + 1;
+                    } else {
+                        count += myMap.get(s.charAt(i+1)) - myMap.get(s.charAt(i));
+                        i = i +2;
+                    }
+                }
             }
-
-             if(i + 2 >= s.length()){
-                 count+= myMap.get(s.charAt(i+1));
-                 break;
-             }
-                 i = i + 2;
-             }
-
         return count;
     }
 }
