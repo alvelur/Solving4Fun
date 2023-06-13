@@ -38,5 +38,13 @@ public class MaximunDepthOfBinaryTree {
         }
         return max;
     }
+
+    public int maxDepthRecursive(TreeNode root) {
+        if (root == null) return 0;
+
+        int leftWeight = maxDepth(root.left);
+        int rightWeight = maxDepth(root.right);
+        return Math.max(leftWeight, rightWeight) + 1;
+    }
 }
 
