@@ -1,4 +1,5 @@
-package org.example;
+package org.example.Algorithms;
+
 import java.util.Stack;
 
 public class MaximunDepthOfBinaryTree {

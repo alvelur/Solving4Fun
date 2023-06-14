@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Algorithms;
 
 public class RecursiveFibonacci {
     public static void main(String[] args) {
