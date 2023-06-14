@@ -2,6 +2,7 @@ package org.example.endpoints;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.example.payload.User;
 
 import static io.restassured.RestAssured.given;
 
