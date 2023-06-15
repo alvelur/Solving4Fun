@@ -32,4 +32,11 @@ public class UserTests {
         response.then().log().all();
         Assert.assertEquals(response.getStatusCode(), 200);
     }
+
+    @Test
+    public void getAnUser(){
+        Response response  = UserEndPoints.getAnUser(userPayload.getUsername());
+        response.then().log().all();
+        Assert.assertEquals(response.getStatusCode(), 200);
+    }
 }

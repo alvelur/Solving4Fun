@@ -78,8 +78,4 @@ public class User {
 
     int userStatus = 0;
 
-
-
-
-
 }
