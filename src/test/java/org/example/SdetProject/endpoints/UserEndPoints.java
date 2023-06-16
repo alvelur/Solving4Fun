@@ -1,8 +1,8 @@
-package org.example.endpoints;
+package org.example.SdetProject.endpoints;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.example.payload.User;
+import org.example.SdetProject.endpoints.payload.User;
 
 import static io.restassured.RestAssured.given;
 

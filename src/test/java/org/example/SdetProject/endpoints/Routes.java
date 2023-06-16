@@ -1,4 +1,4 @@
-package org.example.endpoints;
+package org.example.SdetProject.endpoints;
 
 
 public class Routes {

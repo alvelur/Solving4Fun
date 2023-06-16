@@ -1,4 +1,4 @@
-package org.example.payload;
+package org.example.SdetProject.endpoints.payload;
 
 public class User {
 

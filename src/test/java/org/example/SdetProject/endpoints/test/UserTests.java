@@ -1,9 +1,9 @@
-package org.example.test;
+package org.example.SdetProject.endpoints.test;
 
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
-import org.example.endpoints.UserEndPoints;
-import org.example.payload.User;
+import org.example.SdetProject.endpoints.UserEndPoints;
+import org.example.SdetProject.endpoints.payload.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
